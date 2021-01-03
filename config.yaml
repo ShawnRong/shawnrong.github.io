@@ -16,21 +16,21 @@ params:
     ShowShareButtons: false
     comments: false
     defaultTheme: auto
-    disableThemeToggle: true
-    disableSpecial1stPost: false
+    disableThemeToggle: false
+    disableSpecial1stPost: true
 
     # home-info mode
-    homeInfoParams:
-        Title: "Hi there \U0001F44B"
+    # homeInfoParams:
+    #     Title: "Hi there \U0001F44B"
         # Content: Welcome to my blogg
 
-    socialIcons:
-        - name: twitter
-          url: "https://twitter.com/"
-        - name: stackoverflow
-          url: "https://stackoverflow.com"
-        - name: github
-          url: "https://github.com/"
+    # socialIcons:
+    #     - name: twitter
+    #       url: "https://twitter.com/"
+    #     - name: stackoverflow
+    #       url: "https://stackoverflow.com"
+    #     - name: github
+    #       url: "https://github.com/"
     
     fuseOpts:
         isCaseSensitive: false
@@ -44,15 +44,15 @@ params:
 menu:
     main:
         - identifier: search
-          name: 🔍
+          name: Search
           url: search
           weight: 10
         - identifier: tags
-          name: 🏷️
+          name: ️Tag
           url: tags
           weight: 20
         - identifier: archive
-          name: 🧳
+          name: Archive
           url: archive
           weight: 30
 
