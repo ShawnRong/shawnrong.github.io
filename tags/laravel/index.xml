@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Laravel on 💊Time Capsule</title><link>http://shawnrong.github.io/tags/laravel/</link><description>Recent content in Laravel on 💊Time Capsule</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 08 Nov 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://shawnrong.github.io/tags/laravel/index.xml" rel="self" type="application/rss+xml"/><item><title>Laravel 生命周期</title><link>http://shawnrong.github.io/posts/laravel%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link><pubDate>Wed, 08 Nov 2017 00:00:00 +0000</pubDate><guid>http://shawnrong.github.io/posts/laravel%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid><description>Laravel 生命周期 生命周期概述 入口 publuc/index.php是一个Laravel应用程序的入口，是整个框架的起点。index.php代码不多，主要的阶段就是：
+加载Composer项目依赖 创建一个app实例容器 接收并且处理http请求 生命周期详解 加载项目依赖 Laravel使用Composer进行包的管理，所有组件的加载工作，仅需要一行代码
+require __DIR__.&amp;#39;/../vendor/autoload.php&amp;#39;; 创建App实例 接下来便是创建应用实例(Illuminate\Foundation\Application)，也叫服务容器
+$app = require_once __DIR__.&amp;#39;/../bootstrap/app.php&amp;#39;; 整个初始化的过程包括：注册项目基础的ServiceProvider,注册SerciveProvider的Alias,注册目录路径等。
+bootstrap/app.php中也完成了内核绑定。
+Laravel会依据http请求的运行环境不同，将请求发送至相应的内核HTTP内核 或 Console内核。无论哪个内核，它们作用都是处理http请求。
+最终，HTTP内核用handlemethod,单纯的接收一个Request以及返回一个Response。
+HTTP内核 HTTP内核继承了Illuminate\Foundation\Http\Kernal类，它定义了在执行请求之前运行的 bootstrappers 数组。包含完成环境检测，配置加载，异常处理，Facades注册，ServiceProvider注册，启动服务这6个引导程序。
+HTTP内核定义了所有被请求应用程序处理之前必须经过的HTTP中间件列表。 这些中间件可以处理 HTTP session 的读写, 可以判断服务器当前是否处于维护模式, 验证 CSRF token ( 为了保护服务器不受 CSRF 攻击 ) 等等功能.
+ServiceProvider 最重要的引导操作之一就是加载应用程序的ServiceProvider。应用程序的所有ServiceProvider都在config/app.php配置文件的providers数组中配置。所有的provider都会调用register方法，由boot方法负责调用所有的被注册provider。
+ServiceProvider负责引导所有框架的各种组件，如数据库、队列、验证和路由组件。也就是说，框架提供的每个功能都它们来引导并配置。因此也可以说，ServiceProvider是整个 Laravel 引导过程中最重要的方面。
+接收并处理请求 处理请求包含两个阶段：
+创建请求实例 处理请求 创建请求实例 请求实例`Illuminate\Http\Request`的`capture() `方法，内部通过Symfony实例创建一个Laravel请求实例 /** * Create a new Illuminate HTTP request from server variables.</description></item></channel></rss>

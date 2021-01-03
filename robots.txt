@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: http://shawnrong.github.io/sitemap.xml
