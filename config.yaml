@@ -1,6 +1,6 @@
 baseURL: "https://shawnrong.github.io/"
 languageCode: "en-us"
-title: "Time Capsule💊"
+title: "Time Capsule"
 theme: "paper-mod"
 
 
@@ -31,6 +31,8 @@ params:
     #       url: "https://stackoverflow.com"
     #     - name: github
     #       url: "https://github.com/"
+    label:
+      icon: /icon.png
     assets:
       favicon: favicon_io/favicon.ico
       favicon16x16: favicon_io/favicon-16x16.png
