@@ -1,6 +1,6 @@
 baseURL: "https://shawnrong.github.io/"
 languageCode: "en-us"
-title: "💊Time Capsule"
+title: "Time Capsule💊"
 theme: "paper-mod"
 
 
@@ -31,6 +31,12 @@ params:
     #       url: "https://stackoverflow.com"
     #     - name: github
     #       url: "https://github.com/"
+    assets:
+      favicon: favicon_io/favicon.ico
+      favicon16x16: favicon_io/favicon-16x16.png
+      favicon32x32: favicon_io/favicon-32x32.png
+      apple_touch_icon: favicon_io/apple-touch-icon.png
+      safari_pinned_tab: favicon_io/apple-touch-icon.png
     
     fuseOpts:
         isCaseSensitive: false
